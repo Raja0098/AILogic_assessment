@@ -14,6 +14,33 @@ result.append(0)
 print(result)
 
 
+# updated code for question 1
+
+sort_nums = sorted(nums)
+print(sort_nums)
+
+def get_index(nums,sort_nums):
+    n = len(sort_nums)
+    
+    mid = len(sort_nums)//2
+    
+    if nums == sort_nums[mid]:
+        return n-mid
+    elif nums > sort_nums[mid] :
+        return get_index(nums,sort_nums[mid:])
+    else :
+        return get_index(nums,sort_nums[:mid])
+    
+    
+            
+result = []
+for i in range(len(nums)-1):
+    check = get_index(sort_nums,nums[i])
+    result.append(check)
+    
+print(result)
+
+
 #  Question 3 Solution 
 
 def num_array(nums,k):
