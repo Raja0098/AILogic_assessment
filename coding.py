@@ -36,6 +36,28 @@ print(solution)
 
 # Question 2 solution 
 
+def longest_string(st,k):
+    count = k
+    distinct = 1
+    num = 0
+    check = set()
+    for i in st:
+        if i not in check :
+            
+            if count > 0 or distinct == 1 :
+                
+                num += 1
+                count -= 1
+            else :
+                return num
+        else :
+            num +=1
+        check.add(i)
+        print(check)
+            
+    return num
+print(longest_string("ABAB",2))
+
 
 
 
